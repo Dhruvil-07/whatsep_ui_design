@@ -1,14 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:watsep_ui_design/data/user_data.dart';
+import 'package:watsep_ui_design/util/navigation/navigation.dart';
+import 'package:watsep_ui_design/view/mobile_view/home_page/mobile_chat_view.dart';
 
-class mobile_chat_view extends StatefulWidget {
-  const mobile_chat_view({Key? key}) : super(key: key);
+class mobile_user_list_view extends StatefulWidget {
+  const mobile_user_list_view({Key? key}) : super(key: key);
 
   @override
-  State<mobile_chat_view> createState() => _mobile_chat_viewState();
+  State<mobile_user_list_view> createState() => _mobile_user_list_viewState();
 }
 
-class _mobile_chat_viewState extends State<mobile_chat_view> {
+class _mobile_user_list_viewState extends State<mobile_user_list_view> {
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -16,6 +18,7 @@ class _mobile_chat_viewState extends State<mobile_chat_view> {
         vertical: 16.0,
       ),
       child: ListView.builder(
+        shrinkWrap: true,
         itemCount: userdata.length,
         itemBuilder: (context, index){
           return Padding(
@@ -24,6 +27,15 @@ class _mobile_chat_viewState extends State<mobile_chat_view> {
             child: Column(
               children: [
                 ListTile(
+                  onTap: (){
+                    Navigator.push(context,
+                        cust_transactinon(
+                          child: mobile_chat_view(
+                            username: userdata[index]["name"].toString(),
+                            image: userdata[index]["profilePic"].toString(),
+                          ),
+                        ));
+                  },
                   leading: CircleAvatar(
                     radius: 30.0,
                     backgroundImage: NetworkImage(
