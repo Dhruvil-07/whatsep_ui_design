@@ -11,7 +11,7 @@ class mobile_setting_view extends StatelessWidget {
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(60.0),
         child: AppBar(
-          backgroundColor: Color(0xff128C7E),
+          //backgroundColor: Color(0xff128C7E),
           title: Text("Settings" ,
             style: TextStyle(
               letterSpacing: 1.5,
@@ -103,7 +103,7 @@ class mobile_setting_view extends StatelessWidget {
                 child: Text("from" ,
                   style: TextStyle(
                     fontSize:20.0,
-                    color: Colors.black.withOpacity(0.5),
+                    color:Theme.of(context).brightness == Brightness.light ? Colors.black.withOpacity(0.5) : Colors.white.withOpacity(0.5),
                   ),
                 ),
               ),
@@ -114,6 +114,7 @@ class mobile_setting_view extends StatelessWidget {
                   style: TextStyle(
                     fontSize: 25.0,
                     fontWeight: FontWeight.bold,
+                    color: Theme.of(context).brightness == Brightness.light ?  Colors.black : Colors.white,
                   ),
                 )
               ),

@@ -20,6 +20,7 @@ class _mobile_call_viewState extends State<mobile_call_view> {
           itemCount: 7,
           itemBuilder: (context, index){
             return reusablerow(
+              context,
                 userdata[index]["profilePic"].toString() ,
                 userdata[index]["name"].toString(),
                 " (1) Today , ${userdata[index]["time"]}",
@@ -35,7 +36,7 @@ class _mobile_call_viewState extends State<mobile_call_view> {
 
 
 //reusable row
-Widget reusablerow(String Imagepath , String name , String detail , IconData icon , int index)
+Widget reusablerow(BuildContext context , String Imagepath , String name , String detail , IconData icon , int index)
 {
    return Padding(
      padding: const EdgeInsets.only(
@@ -69,10 +70,10 @@ Widget reusablerow(String Imagepath , String name , String detail , IconData ico
                   SizedBox(height: 4.0,),
                   Row(
                     children: [
-                      Icon(Icons.call_made , size: 18.0,color: Colors.black.withOpacity(0.6),),
+                      Icon(Icons.call_made , size: 18.0,color: Theme.of(context).brightness == Brightness.light ?  Colors.black.withOpacity(0.6) : Colors.white.withOpacity(0.6),),
                       Text(detail ,
                         style: TextStyle(
-                          color: Colors.black.withOpacity(0.6),
+                          color: Theme.of(context).brightness == Brightness.light ?  Colors.black.withOpacity(0.6) : Colors.white.withOpacity(0.5),
                         ),
                       ),
                     ],

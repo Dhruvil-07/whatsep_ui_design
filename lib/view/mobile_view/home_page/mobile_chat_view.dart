@@ -56,8 +56,12 @@ class mobile_chat_view extends StatelessWidget {
         decoration: BoxDecoration(
           image: DecorationImage(
             fit: BoxFit.fill,
-             image: NetworkImage("https://cdn.wallpapersafari.com/4/11/WofyVJ.png")
-          )
+             image: NetworkImage(
+                 Theme.of(context).brightness == Brightness.light ?
+                 "https://cdn.wallpapersafari.com/4/11/WofyVJ.png" :
+                 "https://i.pinimg.com/736x/85/ec/df/85ecdf1c3611ecc9b7fa85282d9526e0.jpg",
+             ),
+          ),
         ),
         child: Column(
           children: [
@@ -72,7 +76,7 @@ class mobile_chat_view extends StatelessWidget {
               ),
               child: Container(
                 decoration: BoxDecoration(
-                  color: Color(0xFFFFF3C2),
+                  color: Theme.of(context).brightness == Brightness.light ?  Color(0xFFFFF3C2) : Colors.yellow.shade200,
                   borderRadius: BorderRadius.circular(10.0),
                 ),
                 child: Padding(
@@ -80,6 +84,7 @@ class mobile_chat_view extends StatelessWidget {
                   child: Text(description,
                         style: TextStyle(
                           fontSize: 16.0,
+                          color: Colors.black,
                         ),
                       ),
                 ),
@@ -107,7 +112,9 @@ class mobile_chat_view extends StatelessWidget {
                             constraints: BoxConstraints(
                               maxWidth: 300.0,
                             ),
-                            color: messages[index]["isMe"] == false ? Colors.white : Color(0xFFE4FDCA),
+                            color: Theme.of(context).brightness == Brightness.light ?
+                            messages[index]["isMe"] == false ? Colors.white : Color(0xFFE4FDCA) :
+                            messages[index]["isMe"] == false ? Colors.grey.withOpacity(0.7) : Colors.teal,
                             child: Padding(
                               padding: EdgeInsets.only(
                                 top: 10.0 ,

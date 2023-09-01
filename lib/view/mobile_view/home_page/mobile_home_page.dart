@@ -23,7 +23,7 @@ class _mobile_home_viewState extends State<mobile_home_view> {
       length: 3,
       child: Scaffold(
           appBar: AppBar(
-            backgroundColor: Color(0xff128C7E),
+            //backgroundColor: Color(0xff128C7E),
             title: Text("WhatsApp" ,
               style: TextStyle(
                 letterSpacing: 1.0,

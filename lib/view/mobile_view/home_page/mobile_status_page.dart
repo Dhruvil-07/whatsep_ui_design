@@ -29,7 +29,6 @@ class _mobile_status_viewState extends State<mobile_status_view> {
             child: Text("Recent Updates" ,
              style: TextStyle(
                fontSize: 18.0,
-               color: Colors.black,
              ),
             ),
           ),
@@ -51,7 +50,6 @@ class _mobile_status_viewState extends State<mobile_status_view> {
             child: Text("Viewed  Updates" ,
               style: TextStyle(
                 fontSize: 18.0,
-                color: Colors.black,
               ),
             ),
           ),
