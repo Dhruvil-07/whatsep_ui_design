@@ -48,7 +48,7 @@ Widget reusablerow(String Imagepath , String name , String detail , IconData ico
         children: [
 
           CircleAvatar(
-              radius: 30.0,
+              radius: 25.0,
               backgroundImage: NetworkImage(Imagepath),
             ),
 
@@ -62,7 +62,7 @@ Widget reusablerow(String Imagepath , String name , String detail , IconData ico
                 children: [
                   Text(name ,
                     style: TextStyle(
-                      fontSize: 20.0,
+                      fontSize: 18.0,
                       fontWeight: FontWeight.bold,
                     ),
                   ),

@@ -76,7 +76,7 @@ Widget ReuasbleRow(BuildContext ctx , String Imagepath , String Name , String Ti
 
         Container(
              margin: EdgeInsets.only(
-               left: 4.0,
+               left: 12.0,
              ),
              padding: EdgeInsets.all(1.5),
              decoration: BoxDecoration(
@@ -86,8 +86,8 @@ Widget ReuasbleRow(BuildContext ctx , String Imagepath , String Name , String Ti
              child: ClipRRect(
                borderRadius: BorderRadius.circular(40.0),
                child: Image.network(Imagepath ,
-                 height: 65.0,
-                 width: 65.0,
+                 height: 55.0,
+                 width: 55.0,
                  fit: BoxFit.fill,
                ),
              )

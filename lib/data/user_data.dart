@@ -1,6 +1,6 @@
 const userdata = [
   {
-    'name': 'Rivaan Ranawat',
+    'name': 'Elon Musk',
     'message': 'Hey, how are you doing?',
     'time': '3:53 pm',
     'profilePic':
