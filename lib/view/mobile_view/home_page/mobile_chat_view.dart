@@ -87,7 +87,7 @@ class mobile_chat_view extends StatelessWidget {
             ),
 
 
-            SizedBox(height: 18.0,),
+            SizedBox(height: 16.0,),
 
 
             //message list
@@ -107,7 +107,7 @@ class mobile_chat_view extends StatelessWidget {
                             constraints: BoxConstraints(
                               maxWidth: 300.0,
                             ),
-                            color: Colors.white,
+                            color: messages[index]["isMe"] == false ? Colors.white : Color(0xFFE4FDCA),
                             child: Padding(
                               padding: EdgeInsets.only(
                                 top: 10.0 ,
@@ -127,9 +127,7 @@ class mobile_chat_view extends StatelessWidget {
                     ),
                   );
                 }),
-            )
-
-            //user chat send
+            ),
 
 
           ],
@@ -138,34 +136,3 @@ class mobile_chat_view extends StatelessWidget {
     );
   }
 }
-
-
-
-/*
-   //user chat recive
-            Align(
-              alignment: Alignment.centerLeft,
-              child: Padding(
-                padding: EdgeInsets.only( left: 10.0 , right: 10.0 , top: 4.0, bottom: 4.0),
-                child: Container(
-                  child: ClipPath(
-                    clipper: UpperNipMessageClipperTwo(MessageType.receive),
-                    child:Container(
-                        color: Colors.white,
-                        child: Padding(
-                          padding: const EdgeInsets.only(
-                            top: 10.0 , bottom: 10.0 , left: 30.0 , right: 20.0,
-                          ),
-                          child: Text("hello",
-                            style: TextStyle(
-                              fontSize: 17.0,
-                            ),
-                          ),
-                        ),
-                      ),
-                  ),
-                ),
-              ),
-            ),
-
-*/
